@@ -1,0 +1,21 @@
+# Siri frontend roadmap
+- [x] Product boolean defaults and friendly field validation; storefront readback
+- [x] Whole-rupee pricing and consistent dates everywhere
+- [x] Numeric fulfillment settings and customer label cleanup
+- [x] Shared browser-persisted stores with reload verification
+- [x] Compact per-product inventory save and Low/Out badges
+- [x] Four admin mobile tabs plus role-aware More sheet
+- [x] Regression tests and end-to-end verification
+- [x] Demo admin access, separate adaptive layout and eight screens
+- [x] Shared products, coupons, settings, inventory, reservations and order transitions
+- [x] Customer order status integration and checkout order details
+- [x] Validate owner/staff flows and desktop/tablet/phone usability
+- [x] Bag: shared coupon config, apply/remove, delivery totals, labels
+- [x] Checkout: item summary, validated address/payment, pickup, review, focused header
+- [x] Verify bag and doorstep/pickup checkout flows
+- [x] Shared design system, navigation, footer, and editorial homepage
+- [x] Product discovery, search, filters, product details, wishlist, and bag
+- [x] Preview checkout, account, and fulfillment-specific order tracking
+- [x] Stylist preview, showroom service previews, scanner, and image-review readiness
+- [x] Responsive, accessibility, interaction, and visual verification
+- [x] Marketplace-style redesign: denser home, search panel, quick add, filters/sort, offers, sticky mobile actions, compact orders

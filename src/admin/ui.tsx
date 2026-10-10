@@ -1,0 +1,7 @@
+import { useEffect, useState, type ReactNode } from 'react';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Skeleton } from '@/components/ui/skeleton';
+export function ListState({children,empty,error}:{children:ReactNode;empty?:boolean;error?:string}){const [ready,setReady]=useState(false);useEffect(()=>setReady(true),[]);if(!ready)return <div role="status" aria-label="Loading list" className="grid gap-3"><Skeleton className="h-14 w-full"/><Skeleton className="h-14 w-full"/><Skeleton className="h-14 w-full"/></div>;if(error)return <p role="alert" className="text-destructive">{error}</p>;if(empty)return <div className="admin-empty">No matching records.</div>;return <>{children}</>;}
+export function Confirm({open,onClose,onConfirm,title}:{open:boolean;onClose:()=>void;onConfirm:()=>void;title:string}){return <Dialog open={open} onOpenChange={onClose}><DialogContent className="admin-dialog"><DialogTitle>{title}</DialogTitle><DialogDescription>This changes the shared demo record for this session.</DialogDescription><div className="flex gap-3"><Button variant="outline" onClick={onClose}>Keep record</Button><Button variant="destructive" onClick={()=>{onConfirm();onClose()}}>Confirm</Button></div></DialogContent></Dialog>;}
+export function ErrorText({error}:{error:string}){return error?<p role="alert" className="text-destructive text-sm">{error}</p>:null;}

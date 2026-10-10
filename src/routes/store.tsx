@@ -1,0 +1,9 @@
+import { deliveryEstimate, pickupEstimate } from '@/lib/fulfillment';
+import { useAdminStore } from '@/admin/store';
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { Store, Shirt, Scissors } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { pageHead } from '@/lib/shop/catalog';
+import showroom from '@/assets/showroom.jpg';
+export const Route = createFileRoute('/store')({head:()=>pageHead('Kandukur Showroom','Discover how Siri Shopping Mall will connect online shopping with the Kandukur showroom.'),component:StorePage});
+function StorePage(){const {settings}=useAdminStore();return <div className="wrap page-tight"><span className="eyebrow text-primary">KANDUKUR, ANDHRA PRADESH</span><h1 className="plp-title mt-4">Online or in-store.<br/>Your choice.</h1><p className="page-intro">Some things are better in person. Explore online, then find your fit with us.</p><img src={showroom} className="w-full aspect-[2/1]" alt="An illustrative modern Indian fashion showroom" width={1280} height={768}/><div className="store-service-grid">{[[Store,'Showroom stock & pickup','Check availability and collect your order from Kandukur.'],[Shirt,'Trial room reservations','Choose your styles and have them ready before your visit.'],[Scissors,'Alterations & styling','Get personal help and alteration support from our team.']].map(([Icon,t,d])=>{const I=Icon as typeof Store;return <article className="store-service" key={String(t)}><I className="text-primary"/><h3>{String(t)}</h3><p>{String(d)}</p><span className="micro muted">COMING SOON</span></article>})}</div><p className="preview-note mt-10">{settings.name} · {settings.address}<br/>{settings.hours} · {settings.phone}<br/>WhatsApp: {settings.whatsapp} · {pickupEstimate(settings)}</p><Button asChild><Link to="/shop">Explore the collection</Link></Button></div>}

@@ -1,0 +1,3 @@
+type Fulfillment = { deliveryMinDays: number; deliveryMaxDays: number; pickupReadyHours: number };
+export const deliveryEstimate = (settings: Pick<Fulfillment, 'deliveryMinDays' | 'deliveryMaxDays'>) => `${settings.deliveryMinDays} to ${settings.deliveryMaxDays} days`;
+export const pickupEstimate = (settings: Pick<Fulfillment, 'pickupReadyHours'>) => `Ready within ${settings.pickupReadyHours} hours`;
